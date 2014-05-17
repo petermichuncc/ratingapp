@@ -6,10 +6,18 @@ This application demonstrates the usage of the MEAN stack, containing:
 * AngularJS
 * Node.js
 
-This application will be used in the Become MEAN tutorial, which you can find soon at [http://g00glen00b.be](http://g00glen00b.be).
+This application will be used in the Become MEAN tutorial, which you can at [http://g00glen00b.be](http://g00glen00b.be/mean-stack).
 
 ## Installation
-Clone this repo and install all dependencies by using `bower install`. If you're not interested in Bower you can still manually install al libraries.
+Clone this repo and install all front-end dependencies by using:
+```
+bower install
+```
+If you're not interested in Bower you can still manually install all libraries.
+The back-end dependencies (Mongoose & Express.js) can be retrieved using npm, by invoking the command:
+```
+npm install
+```
 
 ## Libraries
 

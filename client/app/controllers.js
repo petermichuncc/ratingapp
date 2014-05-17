@@ -22,7 +22,6 @@ angular.module("myApp.controllers", []).controller("songCtrl", function($scope, 
   };
   
   $scope.updateSong = function(song) {
-    console.log(song);
     song.$update();
   };
   

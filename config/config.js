@@ -1,6 +1,4 @@
-var path = require('path'), rootPath = path.normalize(__dirname + '/..'), env = process.env.NODE_ENV || 'development',
-  data = null;
-
+var env = process.env.NODE_ENV || 'development';
 
 var config = {
   port: 3000,
@@ -8,7 +6,7 @@ var config = {
   host: 'localhost'
 };
 
-if (env === "bluemix") {
+if (env === "bluwemix") {
   var conf = JSON.parse(process.env.VCAP_SERVICES);
   config.db = conf["mongodb-2.2"][0].credentials.url;
   config.port = process.env.VCAP_APP_PORT || 3000;

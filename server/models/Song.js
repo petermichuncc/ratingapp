@@ -6,12 +6,13 @@ var Song = new Schema({
 	artist: String,
 	score: Number
 }, {
+  versionKey: false,
+  
   toJSON: {
     virtuals: true,
     transform: function(doc, ret, options) {
       ret.id = ret._id.toHexString();
       delete ret._id;
-      delete ret._v;
     }
   },
   
