@@ -3,21 +3,16 @@ var path = require('path'), rootPath = path.normalize(__dirname + '/..'), env = 
 
 
 var config = {
-  development: {
-    port: 3000,
-    db: 'mongodb://localhost/songs'
-  },
-  bluemix: {
-    port: 3000,
-    db: null
-  }
+  port: 3000,
+  db: 'mongodb://localhost/songs',
+  host: 'localhost'
 };
 
 if (env === "bluemix") {
-  data = process.env.VCAP_SERVICES;
-  if (data !== undefined && data !== null && data["mongodb-2.2"] !== null && data["mongodb-2.2"] !== undefined) {
-    config.bluemix.db = data["mongodb-2.2"].url;
-  }
+  var conf = JSON.parse(process.env.VCAP_SERVICES);
+  config.db = conf["mongodb-2.2"][0].credentials.url;
+  config.port = process.env.VCAP_APP_PORT || 3000;
+  config.host = process.env.VCAP_APP_HOST || 'localhost';
 }
 
-module.exports = config[env];
+module.exports = config;

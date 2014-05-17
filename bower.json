@@ -1,5 +1,5 @@
 {
-	"name": "angular-song-rate",
+	"name": "mean-song-rate",
 	"version": "0.0.1",
 	"dependencies": {
 		"angular": "latest",
