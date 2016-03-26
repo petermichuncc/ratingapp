@@ -1,3 +1,4 @@
+//set PATH=%PATH%;C:\Program Files\Git\bin; this is to assign the git folder
 var express = require('express'), mongoose = require('mongoose'), fs = require('fs'), http = require('http'),
 	config = require('./config/config'), root = __dirname, app = express(), server = null;
 	
