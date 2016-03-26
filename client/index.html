@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+    <!-- extra script added to setup a controller to show/hide a image and/or details of a site-->
+   
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
     <title>Rate the site</title>
@@ -9,13 +13,15 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
+       
+   
   <body ng-app="myApp">
     <div ng-controller="songCtrl" class="container">
-      <div class="page-header">
-        <h1>Rate the site <small>Like them all!</small></h1>
+      <div class="page-header" >
+        <h1 >Rate the site</h1>
       </div>
       <div class="alert alert-info" ng-if="!songs.length">
-        <strong>First!</strong> You're the first one using this app. Make sure to add some sites to the list!
+        You're the first one using this app. Make sure to add some sites to the list!
       </div>
       <table class="table table-striped table-condensed">
         <thead>
@@ -27,8 +33,19 @@
           <tr ng-repeat="song in songs | orderBy:'-score'">
             <td>
               <div class="pull-left">
+                 
                 <strong>{{song.artist | titleize}}</strong><br />
-                <small>{{song.title | titleize}}</small>
+                <small>{{song.title | titleize}}</small><br />
+                <input type="button" value="Details" ng-click="ShowHide()" />
+        <br />
+        <br />
+        <div ng-hide="IsHidden">
+            
+                <!--<img src="http://www.w3schools.com/html/html5.gif" alt="Mountain View" style="width:304px;height:228px;">-->
+
+                        <a href="http://{{song.url}}">{{song.artist}} </a>
+                <br />
+                </div>
               </div>
               <div class="pull-right">
                 <div rating score="song.score" max="5" class="pull-left" update="updateSong(song)"></div>
@@ -40,21 +57,26 @@
           </tr>
         </tbody>
       </table>
-      <form role="form" ng-submit="addSong(newSong.artist, newSong.title)">
+      <form role="form" ng-submit="addSong(newSong.artist, newSong.url, newSong.title)">
         <div class="row">
-          <div class="col-sm-5">
+          <div class="col-sm-2">
             <label class="sr-only" for="artist">Site</label>
             <input type="text" class="form-control" name="artist" placeholder="Name of the website." 
               ng-model="newSong.artist" autofocus />
           </div>
-          <div class="col-sm-5">
+          <div class="col-sm-2">
+            <label class="sr-only" for="url">URL</label>
+            <input type="text" class="form-control" name="url" placeholder="Enter the URL." 
+              ng-model="newSong.url" autofocus />
+          </div>
+          <div class="col-sm-4">
             <label class="sr-only" for="song">Review</label>
             <input type="text" class="form-control" name="song" placeholder="Enter the review" 
               ng-model="newSong.title" />
           </div>
           <div class="col-sm-2">
             <button type="submit" class="btn btn-default form-control"
-              ng-disabled="isEmpty(newSong.title) || isEmpty(newSong.artist)">Add</button>
+              ng-disabled="isEmpty(newSong.title)|| isEmpty(newSong.url) || isEmpty(newSong.artist)">Add</button>
           </div>
         </div>
       </form>

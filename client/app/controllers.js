@@ -2,15 +2,23 @@
 /*jslint nomen: true */
 /*global angular, _ */
 "use strict";
-
+/*app.controller('MyController', function ($scope) {
+            //This will hide the DIV by default.
+            $scope.IsHidden = true;
+            $scope.ShowHide = function () {
+                //If DIV is hidden it will be visible and vice versa.
+                $scope.IsHidden = $scope.IsHidden ? false : true;
+            }
+        });*/
 angular.module("myApp.controllers", []).controller("songCtrl", function($scope, Song) {
   
   $scope.songs = Song.query();
   $scope.newSong = { };
   
-  $scope.addSong = function(/** String */ artist, /** String */ title) {
+  $scope.addSong = function(/** String */ artist, /** String */ url, /** String */ title) {
     var song = new Song();
     song.artist = artist;
+    song.url = url;
     song.title = title;
     song.score = 0;
     song.$save(function(response) {
@@ -18,6 +26,7 @@ angular.module("myApp.controllers", []).controller("songCtrl", function($scope, 
     });
 
     $scope.newSong.title = "";
+    $scope.newSong.url = "";
     $scope.newSong.artist = "";
   };
   
@@ -36,4 +45,9 @@ angular.module("myApp.controllers", []).controller("songCtrl", function($scope, 
   $scope.isEmpty = function(/** String */ str) {
     return _.isBlank(str);
   };
+            $scope.IsHidden = true;
+            $scope.ShowHide = function () {
+                //If DIV is hidden it will be visible and vice versa.
+                $scope.IsHidden = $scope.IsHidden ? false : true;
+            }
 });

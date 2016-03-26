@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'), Song = mongoose.model('Song');
-
+//This is code for adding to the database and removing etc.. 
 exports.findAll = function(req, res) {
   Song.find({}, function(err, songs) {
     if (err) {

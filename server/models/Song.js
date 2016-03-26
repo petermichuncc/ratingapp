@@ -1,8 +1,10 @@
+//This is code for setting up the database
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var Song = new Schema({
 	title: String,
+  url: String,
 	artist: String,
 	score: Number
 }, {
