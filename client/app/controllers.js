@@ -10,7 +10,7 @@
                 $scope.IsHidden = $scope.IsHidden ? false : true;
             }
         });*/
-angular.module("myApp.controllers", []).controller("songCtrl", function($scope, Song) {
+angular.module("myApp.controllers", []).controller("songCtrl", function($scope, Song,$timeout) {
   
   $scope.songs = Song.query();
   $scope.newSong = { };
@@ -50,4 +50,24 @@ angular.module("myApp.controllers", []).controller("songCtrl", function($scope, 
                 //If DIV is hidden it will be visible and vice versa.
                 $scope.IsHidden = $scope.IsHidden ? false : true;
             }
+
+ $scope.display = function() {
+  
+        $scope.alertDisplayed = true;
+      $timeout(function() {
+        $scope.alertDisplayed = false;
+      }, 5000)
+    };
+    
+    $scope.alertDisplayed = false;
+
+
+
 });
+
+ /*angular.module("myApp.controllers", []).
+  controller('testController', function($scope, $timeout) {
+    
+   
+  })*/
+

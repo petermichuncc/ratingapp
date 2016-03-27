@@ -16,22 +16,30 @@
        
    
   <body ng-app="myApp">
+ 
     <div ng-controller="songCtrl" class="container">
       <div class="page-header" >
         <img src="http://www.mean-tricks.com/wp-content/uploads/2014/04/mean.jpg" height="30" >
+           <!-- make a black div for background-->
         <h1 >Rate the site</h1>
       </div>
       <div class="alert alert-info" ng-if="!songs.length">
         You're the first one using this app. Make sure to add some sites to the list!
       </div>
-      <div class="alert alert-info" ng-if="songs.length ==5" ng-hide="loginAlertMessage">
-        Good job you added 5 songs
+      <div class="alert alert-info" ng-if="songs.length==5" ng-init="display()" ng-show="alertDisplayed">
+        
+        <section > Good job you added 5 songs</section>
+
       </div>
+      
+      
      <div ng-repeat="song in songs | orderBy:'-score'">
       <div class="alert alert-info" ng-if="song.score ==5">
-         You really like:{{song.artist}}
+      You really like:
+         {{song.artist}}
       </div>
     </div>
+    
 
       <table class="table table-striped table-condensed">
         <thead>
