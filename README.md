@@ -1,12 +1,12 @@
-# MEAN Song rating app
-This small web application is a modified version of the AngularJS song rate app. They differ in storage scenario. While the original version is storing the songs inside the HTML5 LocalStorage, this application is storing the information inside a MongoDB.
+# MEAN Movie rating app
+This small web application is a modified version of the AngularJS Movie rate app. They differ in storage scenario. While the original version is storing the songs inside the HTML5 LocalStorage, this application is storing the information inside a MongoDB.
 This application demonstrates the usage of the MEAN stack, containing:
 * MongoDB
 * Express.js
 * AngularJS
 * Node.js
 
-This application will be used in the Become MEAN tutorial, which you can at [http://g00glen00b.be](http://g00glen00b.be/mean-stack).
+
 
 ## Installation
 Clone this repo and install all front-end dependencies by using:

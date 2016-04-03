@@ -3,6 +3,7 @@
   <head>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
     <!-- extra script added to setup a controller to show/hide a image and/or details of a site-->
    <!-- Add a router system and navigation bar-->
     <meta charset="utf-8" />
@@ -16,7 +17,8 @@
        
    
   <body ng-app="myApp">
- 
+  <div ui-view> </div>
+ <header ng-include="'app/templates/nav.html'"></header>
     <div ng-controller="songCtrl" class="container">
       <div class="page-header" >
         <img src="http://www.mean-tricks.com/wp-content/uploads/2014/04/mean.jpg" height="30" >
@@ -101,12 +103,14 @@
         </div>
       </form>
     </div>
-
+    <footer ng-include="'app/templates/footer.html'"></footer>
     <script type="text/javascript" src="libs/angular/angular.min.js"></script>
     <script type="text/javascript" src="libs/angular-resource/angular-resource.min.js"></script>
     <script type="text/javascript" src="libs/lodash/dist/lodash.min.js"></script>
     <script type="text/javascript" src="libs/underscore.string/dist/underscore.string.min.js"></script>
     <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/controllers/homeCtrl.js"></script>
+    <script type="text/javascript" src="app/controllers/aboutCtrl.js"></script>
     <script type="text/javascript" src="app/controllers.js"></script>
     <script type="text/javascript" src="app/services.js"></script>
     <script type="text/javascript" src="app/filters.js"></script>
