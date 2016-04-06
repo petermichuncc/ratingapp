@@ -20,12 +20,13 @@ angular
         templateUrl: 'app/templates/home.html',
         controller: 'homeCtrl'
       })
-      .state('about', {
-        url: '/about',
-        templateUrl: 'app/templates/about.html',
-        controller: 'aboutCtrl'
+      .state('rate', {
+        url: '/rate',
+        templateUrl: 'app/templates/rate.html',
+        controller: 'rateCtrl'
       })
       
   }])
+  
 
 _.mixin(_.string.exports());

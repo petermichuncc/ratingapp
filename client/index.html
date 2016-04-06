@@ -21,7 +21,7 @@
   <body ng-app="myApp">
   <header ng-include="'app/templates/nav.html'"></header>
   <div ui-view> </div>
- 
+ <h2 ng-if="isHome()">This is home</h2>
     <footer ng-include="'app/templates/footer.html'"></footer>
     <script type="text/javascript" src="libs/angular/angular.min.js"></script>
     <script type="text/javascript" src="libs/angular-resource/angular-resource.min.js"></script>
@@ -29,7 +29,7 @@
     <script type="text/javascript" src="libs/underscore.string/dist/underscore.string.min.js"></script>
     <script type="text/javascript" src="app/app.js"></script>
     <script type="text/javascript" src="app/controllers/homeCtrl.js"></script>
-    <script type="text/javascript" src="app/controllers/aboutCtrl.js"></script>
+    <script type="text/javascript" src="app/controllers/rateCtrl.js"></script>
     <script type="text/javascript" src="app/controllers.js"></script>
     <script type="text/javascript" src="app/services.js"></script>
     <script type="text/javascript" src="app/filters.js"></script>
