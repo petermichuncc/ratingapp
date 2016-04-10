@@ -10,7 +10,8 @@ angular
   'myApp.services',
   'myApp.directives',
   'myApp.controllers',
-  'ui.router'
+  'ui.router',
+  'ngMaterial'
 ])
 	.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
     $urlRouterProvider.otherwise('/');

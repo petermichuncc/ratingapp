@@ -9,4 +9,7 @@
 <img src="app/logoIRDb.jpg"  alt="Main logo" style="width:35%;height:35%;" >
 <br><br>
 <span class="alert alert-info" ng-init="display()" ng-show="alertDisplayed"  style="width:350px;">Internet Website Database</span>
+<span class="alert alert-info" ng-init="display()" ng-show="!alertDisplayed"  style="width:350px;">Go ahead, rate a site :)</span>
+<br><br>
+<md-button class="md-raised" ng-model="button" ui-sref="rate" ng-init="display()" ng-show="!alertDisplayed">Rate</md-button>
 </div>
