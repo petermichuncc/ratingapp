@@ -10,36 +10,36 @@
                 $scope.IsHidden = $scope.IsHidden ? false : true;
             }
         });*/
-angular.module("myApp.controllers", []).controller("songCtrl", function($scope, Song,$timeout) {
+angular.module("myApp.controllers", []).controller("siteCtrl", function($scope, Site,$timeout) {
   
-  $scope.songs = Song.query();
-  $scope.newSong = { };
+  $scope.sites = Site.query();
+  $scope.newSite = { };
   
-  $scope.addSong = function(/** String */ artist, /** String */ url, /** String */ title) {
-    var song = new Song();
-    song.artist = artist;
-    song.url = url;
-    song.title = title;
-    song.score = 0;
-    song.$save(function(response) {
-      $scope.songs.push(response);
+  $scope.addSite = function(/** String */ artist, /** String */ url, /** String */ title) {
+    var site = new Site();
+    site.artist = artist;
+    site.url = url;
+    site.title = title;
+    site.score = 0;
+    site.$save(function(response) {
+      $scope.sites.push(response);
     });
 
-    $scope.newSong.title = "";
-    $scope.newSong.url = "";
-    $scope.newSong.artist = "";
+    $scope.newSite.title = "";
+    $scope.newSite.url = "";
+    $scope.newSite.artist = "";
   };
   
-  $scope.updateSong = function(song) {
-    song.$update();
+  $scope.updateSite = function(site) {
+    site.$update();
   };
   
-  $scope.deleteSong = function(/** Song */ song) {
-    var idx = $scope.songs.indexOf(song);
+  $scope.deleteSite = function(/** Site */ site) {
+    var idx = $scope.sites.indexOf(site);
     if (idx >= 0) {
-      $scope.songs.splice(idx, 1);
+      $scope.sites.splice(idx, 1);
     }
-    song.$remove();
+    site.$remove();
   };
   
   $scope.isEmpty = function(/** String */ str) {

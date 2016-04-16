@@ -1,24 +1,24 @@
 
-    <div ng-controller="songCtrl" class="container">
+    <div ng-controller="siteCtrl" class="container">
       <div class="page-header" >
         <img src="http://www.mean-tricks.com/wp-content/uploads/2014/04/mean.jpg" height="30" >
            <!-- make a black div for background-->
         <h1 >Rate the site</h1>
       </div>
-      <div class="alert alert-info" ng-if="!songs.length">
+      <div class="alert alert-info" ng-if="!sites.length">
         You're the first one using this app. Make sure to add some sites to the list!
       </div>
-      <div class="alert alert-info" ng-if="songs.length==5" ng-init="display()" ng-show="alertDisplayed">
+      <div class="alert alert-info" ng-if="sites.length==5" ng-init="display()" ng-show="alertDisplayed">
         
         <section > Good job you added 5 Sites</section>
 
       </div>
       
       
-     <div ng-repeat="song in songs | orderBy:'-score'">
-      <div class="alert alert-info" ng-if="song.score ==5">
+     <div ng-repeat="site in sites | orderBy:'-score'">
+      <div class="alert alert-info" ng-if="site.score ==5">
       You really like:
-         {{song.artist}}
+         {{site.artist}}
       </div>
     </div>
     
@@ -32,12 +32,12 @@
         </thead>
         <tbody>
 
-          <tr ng-repeat="song in songs | orderBy:'-score'">
+          <tr ng-repeat="site in sites | orderBy:'-score'">
             <td>
               <div class="pull-left">
                  
-                <strong>{{song.artist | titleize}}</strong><br />
-                <small>{{song.title | titleize}}</small><br />
+                <strong>{{site.artist | titleize}}</strong><br />
+                <small>{{site.title | titleize}}</small><br />
                 <input type="button" value="Details" ng-click="ShowHide()" />
         <br />
         <br />
@@ -45,13 +45,13 @@
             
                 <!--<img src="http://www.w3schools.com/html/html5.gif" alt="Mountain View" style="width:304px;height:228px;">-->
 
-                        <a href="http://{{song.url}}">{{song.artist}} </a>
+                        <a href="http://{{site.url}}">{{site.artist}} </a>
                 <br />
                 </div>
               </div>
               <div class="pull-right">
-                <div rating score="song.score" max="5" class="pull-left" update="updateSong(song)"></div>
-                <button type="button" class="btn btn-danger pull-right" ng-click="deleteSong(song)">
+                <div rating score="site.score" max="5" class="pull-left" update="updateSite(site)"></div>
+                <button type="button" class="btn btn-danger pull-right" ng-click="deleteSite(site)">
                   <i class="fa fa-trash-o"></i>
                 </button>
               </div>
@@ -59,26 +59,26 @@
           </tr>
         </tbody>
       </table>
-      <form role="form" ng-submit="addSong(newSong.artist, newSong.url, newSong.title)">
+      <form role="form" ng-submit="addSite(newSite.artist, newSite.url, newSite.title)">
         <div class="row">
           <div class="col-sm-2">
             <label class="sr-only" for="artist">Site</label>
             <input type="text" class="form-control" name="artist" placeholder="Name of the website." 
-              ng-model="newSong.artist" autofocus />
+              ng-model="newSite.artist" autofocus />
           </div>
           <div class="col-sm-2">
             <label class="sr-only" for="url">URL</label>
             <input type="text" class="form-control" name="url" placeholder="Enter the URL." 
-              ng-model="newSong.url" autofocus />
+              ng-model="newSite.url" autofocus />
           </div>
           <div class="col-sm-4">
-            <label class="sr-only" for="song">Review</label>
-            <input type="text" class="form-control" name="song" placeholder="Enter the review" 
-              ng-model="newSong.title" />
+            <label class="sr-only" for="site">Review</label>
+            <input type="text" class="form-control" name="site" placeholder="Enter the review" 
+              ng-model="newSite.title" />
           </div>
           <div class="col-sm-2">
             <button type="submit" class="btn btn-default form-control"
-              ng-disabled="isEmpty(newSong.title)|| isEmpty(newSong.url) || isEmpty(newSong.artist)">Add</button>
+              ng-disabled="isEmpty(newSite.title)|| isEmpty(newSite.url) || isEmpty(newSite.artist)">Add</button>
           </div>
         </div>
       </form>

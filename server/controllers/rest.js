@@ -1,49 +1,49 @@
-var mongoose = require('mongoose'), Song = mongoose.model('Song');
+var mongoose = require('mongoose'), Site = mongoose.model('Site');
 //This is code for adding to the database and removing etc.. 
 exports.findAll = function(req, res) {
-  Song.find({}, function(err, songs) {
+  Site.find({}, function(err, sites) {
     if (err) {
       throw new Error(err);
     }
-  	res.send(songs);
+  	res.send(sites);
   });
 };
 
 exports.findOne = function(req, res) {
-  Song.findById(req.params.id, function(err, song) {
+  Site.findById(req.params.id, function(err, site) {
     if (err) {
       throw new Error(err);
     }
-    res.send(song);
+    res.send(site);
   });
 };
 
 exports.add = function(req, res) {
-  var document = new Song(req.body);
-  document.save(function(err, song) {
+  var document = new Site(req.body);
+  document.save(function(err, site) {
     if (err) {
       throw new Error(err);
     }
-    res.send(song);
+    res.send(site);
   });
 };
 
 exports.update = function(req, res) {
-  Song.findByIdAndUpdate(req.params.id, {
+  Site.findByIdAndUpdate(req.params.id, {
     $set: req.body
-  }, function(err, song) {
+  }, function(err, site) {
     if (err) {
       throw new Error(err);
     }
-    res.send(song);
+    res.send(site);
   });
 };
 
 exports.remove = function(req, res) {
-  Song.findByIdAndRemove(req.params.id, function(err, song) {
+  Site.findByIdAndRemove(req.params.id, function(err, site) {
     if (err) {
       throw new Error(err);
     }
-    res.send(song);
+    res.send(site);
   });
 };

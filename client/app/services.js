@@ -2,8 +2,8 @@
 /*global angular */
 "use strict";
 
-angular.module("myApp.services", []).factory("Song", function($resource) {
-  return $resource('/api/songs/:id', {
+angular.module("myApp.services", []).factory("Site", function($resource) {
+  return $resource('/api/sites/:id', {
     id: '@id'
   }, {
     update: {

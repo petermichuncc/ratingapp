@@ -2,7 +2,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var Song = new Schema({
+var Site = new Schema({
 	title: String,
   url: String,
 	artist: String,
@@ -23,4 +23,4 @@ var Song = new Schema({
   }
 });
 
-mongoose.model('Song', Song);
+mongoose.model('Site', Site);

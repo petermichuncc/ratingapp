@@ -3,17 +3,17 @@ var rest = require('../server/controllers/rest');
 module.exports = function(app){
 
   // find all songs route
-  app.get('/songs', rest.findAll);
+  app.get('/sites', rest.findAll);
   
   // find one song route
-  app.get('/songs/:id', rest.findOne);
+  app.get('/sites/:id', rest.findOne);
   
   // Add song route
-  app.post('/songs', rest.add);
+  app.post('/sites', rest.add);
   
   // Update song route
-  app.put('/songs/:id', rest.update);
+  app.put('/sites/:id', rest.update);
   
   // Delete song route
-  app.del('/songs/:id', rest.remove);
+  app.del('/sites/:id', rest.remove);
 };
