@@ -1,5 +1,5 @@
 {
-	"name": "mean-song-rate",
+	"name": "mean-movie-rate",
 	"version": "0.0.1",
 	"dependencies": {
 		"mongoose": "~3.6.14",
