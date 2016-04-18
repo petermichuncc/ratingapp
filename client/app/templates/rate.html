@@ -39,10 +39,10 @@
                 <strong>{{site.artist | titleize}}</strong><br />
                 <small>{{site.title | titleize}}</small><br />
          
-                <md-button class="md-raised" ng-model="button" ng-click="ShowHide()">Details</md-button>
+                <md-button class="md-raised" ng-model="button" ng-click='setActive(site)' >Details</md-button>
         <br />
         <br />
-        <div ng-hide="IsHidden">
+        <div ng-show='activeItem==site'>
             
                 <!--<img src="http://www.w3schools.com/html/html5.gif" alt="Mountain View" style="width:304px;height:228px;">-->
 
