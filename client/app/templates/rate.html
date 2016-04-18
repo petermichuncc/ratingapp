@@ -18,7 +18,7 @@
      <div ng-repeat="site in sites | orderBy:'-score'">
       <div class="alert alert-info" ng-if="site.score ==5">
       You really like:
-         {{site.artist}}
+         {{site.name}}
       </div>
     </div>
     
@@ -36,7 +36,7 @@
             <td>
               <div class="pull-left">
                  
-                <strong>{{site.artist | titleize}}</strong><br />
+                <strong>{{site.name | titleize}}</strong><br />
                 <small>{{site.title | titleize}}</small><br />
          
                 <md-button class="md-raised" ng-model="button" ng-click='setActive(site)' >Details</md-button>
@@ -46,7 +46,7 @@
             
                 <!--<img src="http://www.w3schools.com/html/html5.gif" alt="Mountain View" style="width:304px;height:228px;">-->
 
-                        <a href="http://{{site.url}}">{{site.artist}} </a>
+                        <a href="http://{{site.url}}">{{site.name}} </a>
                 <br />
                 </div>
               </div>
@@ -60,12 +60,12 @@
           </tr>
         </tbody>
       </table>
-      <form role="form" ng-submit="addSite(newSite.artist, newSite.url, newSite.title)">
+      <form role="form" ng-submit="addSite(newSite.name, newSite.url, newSite.title)">
         <div class="row">
           <div class="col-sm-2">
-            <label class="sr-only" for="artist">Site</label>
-            <input type="text" class="form-control" name="artist" placeholder="Name of the website." 
-              ng-model="newSite.artist" autofocus />
+            <label class="sr-only" for="name">Site</label>
+            <input type="text" class="form-control" name="name" placeholder="Name of the website." 
+              ng-model="newSite.name" autofocus />
           </div>
           <div class="col-sm-2">
             <label class="sr-only" for="url">URL</label>
@@ -79,7 +79,7 @@
           </div>
           <div class="col-sm-2">
             <button type="submit" class="btn btn-default form-control"
-              ng-disabled="isEmpty(newSite.title)|| isEmpty(newSite.url) || isEmpty(newSite.artist)">Add</button>
+              ng-disabled="isEmpty(newSite.title)|| isEmpty(newSite.url) || isEmpty(newSite.name)">Add</button>
           </div>
         </div>
       </form>

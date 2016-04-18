@@ -15,9 +15,9 @@ angular.module("myApp.controllers", []).controller("siteCtrl", function($scope, 
   $scope.sites = Site.query();
   $scope.newSite = { };
   
-  $scope.addSite = function(/** String */ artist, /** String */ url, /** String */ title) {
+  $scope.addSite = function(/** String */ name, /** String */ url, /** String */ title) {
     var site = new Site();
-    site.artist = artist;
+    site.name = name;
     site.url = url;
     site.title = title;
     site.score = 0;
@@ -27,7 +27,7 @@ angular.module("myApp.controllers", []).controller("siteCtrl", function($scope, 
 
     $scope.newSite.title = "";
     $scope.newSite.url = "";
-    $scope.newSite.artist = "";
+    $scope.newSite.name = "";
   };
   
   $scope.updateSite = function(site) {

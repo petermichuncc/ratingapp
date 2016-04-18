@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var Site = new Schema({
 	title: String,
   url: String,
-	artist: String,
+	name: String,
 	score: Number
 }, {
   versionKey: false,
