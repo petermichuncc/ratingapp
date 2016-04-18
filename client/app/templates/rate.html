@@ -38,7 +38,8 @@
                  
                 <strong>{{site.artist | titleize}}</strong><br />
                 <small>{{site.title | titleize}}</small><br />
-                <input type="button" value="Details" ng-click="ShowHide()" />
+         
+                <md-button class="md-raised" ng-model="button" ng-click="ShowHide()">Details</md-button>
         <br />
         <br />
         <div ng-hide="IsHidden">
