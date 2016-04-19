@@ -1,5 +1,5 @@
 {
-	"name": "mean-song-rate",
+	"name": "mean-website-rate",
 	"version": "0.0.1",
 	"dependencies": {
 		"angular": "1.2.15",
